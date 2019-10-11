@@ -1,0 +1,11 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Warning"
+    }
+  },
+  "ConnectionStrings" : {
+    "ConexaoDemoDB":  "Server=(localdb)\\mssqllocaldb; Database=CarroDB;"
+  },
+  "AllowedHosts": "*"
+}

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<AutoCar.Models.Carro>
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+    #tblCarros tr th{
+        text-align:center;
+    }
+</style>
+
+<div class="conteiner">
+    <div class="form-group">
+        <a asp-action="NovoCarro" class="btn btn-primary">Novo Carro</a>
+    </div>
+
+    <table id="tblCarros" class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Marca</th>
+                <th>Ano</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td width="25%">@item.Nome</td>
+                    <td width="25%">@item.Marca</td>
+                    <td width="15%">@item.Ano</td>
+                    <td width="35%">
+                        <a asp-action="AtualizarCarro" asp-route-id="@item.CarroId" class="btn btn-info">Atualizar</a>
+                        <a asp-action="Detalhes" asp-route-id="@item.CarroId" class="btn btn-warning">Detalhes</a>
+                        <a asp-action="Excluir" asp-route-id="@item.CarroId" class="btn btn-danger">Excluir</a>
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
+
+<script>
+    $("#tblCarros").DataTable();
+</script>

@@ -1,0 +1,33 @@
+﻿@model AutoCar.Models.Carro
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h1>Detalhes</h1>
+<div class="row">
+    <div class="col-md-4">
+        <form>
+            <div class="form-group">
+                <label>Código</label><br />
+                <input class="form-control-lg" asp-for="CarroId" disabled />
+            </div>
+            <div class="form-group">
+                <label asp-for="Nome"></label><br />
+                <input class="form-control-lg" asp-for="Nome" disabled/>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Marca"></label><br />
+                <input class="form-control-lg" asp-for="Marca" disabled/>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Ano"></label><br />
+                <input class="form-control-lg" asp-for="Ano" disabled/>
+            </div>
+            <div class="form-group">
+                <a href="@Url.Action("Index", "Carros")" class="btn btn-primary">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
